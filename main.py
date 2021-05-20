@@ -20,6 +20,7 @@ print(uniswap_wrapper.get_fee_maker(),uniswap_wrapper.get_fee_taker())
 print(Decimal(reserve[0]*10**-8)/w3.fromWei(reserve[1], 'ether'))
 
 def buying_amount(qty,token,abi):
+
     token_contract = w3.eth.contract(address=token, abi=abi)
     reserve = token_contract.functions.getReserves().call()
     print(reserve)
